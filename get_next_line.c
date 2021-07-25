@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/25 17:18:04 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/25 20:22:09 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i] != '\0')
 		i++;
 	return (i);
@@ -113,7 +115,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 
 
-
 char	*get_next_line(int fd)
 {
 	char		*print[2]; // 0 é retorno e 1 sendo store temporario
@@ -125,7 +126,7 @@ char	*get_next_line(int fd)
 	size = 1;
 	while (size > 0)
 	{
-		if (temp > 0)
+		if (ft_strlen(temp))
 		{
 			if (ft_strchr(temp, '\n')) //procura '\n' na temp
 			{//achou
@@ -148,11 +149,13 @@ char	*get_next_line(int fd)
 		if (!temp && size > 0)
 			temp = ft_strdup(buf); //temp = strdup(buffer)
 		else if (temp && size > 0)
+		{
 			print[1] = ft_strdup(temp);
-			//free (temp);
+			free (temp);
 			temp = ft_strjoin(temp, buf); //temp = strjoin(temp + buffer)
-			//free (print[1]);
-		if (size == 0 && print > 0 && pass > 0)
+			free (print[1]);
+		}
+		if (size == 0 && ft_strlen(print[0]) > 0 && pass > 0)
 		{
 			print[0] = ft_strjoin (print[0], "\n"); //print = strjoin (print, "\n")
 			free (temp); //limpa temp
