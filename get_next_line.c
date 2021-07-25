@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/25 03:32:07 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/25 03:33:45 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ char	*get_next_line(int fd)
 	char		*print[2]; // 0 é retorno e 1 sendo store temporario
 	static char	*temp;
 	static int	pass;
-	char		*buf[BUFFER_SIZE + 1];
+	char		buf[BUFFER_SIZE + 1];
 	int			size;
 
 	size = 1;
