@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/25 03:24:23 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/25 03:29:04 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,25 @@ int	ft_strlen(const char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
+}
+
+void	*ft_memcpy (void *dest, const char *src, unsigned int len)
+{
+	char	*cdest;
+	char	*csrc;
+
+	if (!dest && !src)
+		return (dest);
+	cdest = (char *)dest;
+	csrc = (char *)src;
+	while (len > 0)
+	{
+		*cdest = *csrc;
+		cdest++;
+		csrc++;
+		len--;
+	}
+	return (dest);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
