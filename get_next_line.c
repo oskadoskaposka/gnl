@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/25 03:39:04 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:05:02 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ char	*get_next_line(int fd)
 			else
 			{//n achou
 				print[0] = ft_strjoin(print[0], temp); //print = strjoin(print + temp)
+				free(temp);
 			}
 		}
 		size = read (fd, buf, BUFFER_SIZE);
