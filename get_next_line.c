@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/25 03:29:04 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/25 03:32:07 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ char	*get_next_line(int fd)
 	char		*print[2]; // 0 é retorno e 1 sendo store temporario
 	static char	*temp;
 	static int	pass;
-	char		*buffer[BUFFER_SIZE + 1];
+	char		*buf[BUFFER_SIZE + 1];
 	int			size;
 
 	size = 1;
@@ -142,14 +142,14 @@ char	*get_next_line(int fd)
 				print[0] = ft_strjoin(print[0], temp); //print = strjoin(print + temp)
 			}
 		}
-		size = read (fd, buffer, BUFFER_SIZE);
-		buffer[size] = '\0';
+		size = read (fd, buf, BUFFER_SIZE);
+		buf[size] = 0;
 		if (!temp && size > 0)
-			temp = ft_strdup(buffer); //temp = strdup(buffer)
+			temp = ft_strdup(buf); //temp = strdup(buffer)
 		else if (temp && size > 0)
 			print[1] = ft_strdup(temp);
 			free (temp);
-			temp = ft_strjoin(temp, buffer); //temp = strjoin(temp + buffer)
+			temp = ft_strjoin(temp, buf); //temp = strjoin(temp + buffer)
 			free (print[1]);
 		if (size == 0 && print > 0 && pass > 0)
 		{
