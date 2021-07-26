@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/26 01:51:33 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:54:47 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,6 @@ char	*get_next_line(int fd)
 	int			size;
 
 	size = 1;
-	print[0] = 0;
 	while (size > 0)
 	{
 		if (ft_strlen(temp))
@@ -142,11 +141,6 @@ char	*get_next_line(int fd)
 				print[1] = 0;
 				return (print[0]); 
 			}
-			/* else
-			{
-				free(print[0]);
-				print[0] = ft_strdup(temp); //000000000000000000000000000000000000
-			} */
 		}
 		size = read (fd, buf, BUFFER_SIZE);
 		buf[size] = 0;
@@ -172,8 +166,6 @@ char	*get_next_line(int fd)
 	}
 	free(temp);
 	temp = 0;
-	//free(print[1]);
-	//free(print[0]);
 	return (NULL);
 	
 }	
