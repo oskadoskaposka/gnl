@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/26 01:31:03 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:44:20 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,11 +142,11 @@ char	*get_next_line(int fd)
 				print[1] = 0;
 				return (print[0]); 
 			}
-			else
+			/* else
 			{
 				free(print[0]);
-				print[0] = ft_strdup(temp); 
-			}
+				print[0] = ft_strdup(temp); //000000000000000000000000000000000000
+			} */
 		}
 		size = read (fd, buf, BUFFER_SIZE);
 		buf[size] = 0;
@@ -161,8 +161,10 @@ char	*get_next_line(int fd)
 			temp = ft_strjoin(print[1], buf);
 			free (print[1]);
 		}
-		if (size == 0 && ft_strlen(print[0]) > 0)
+		//if (size == 0 && ft_strlen(print[0]) > 0)
+		if (size == 0 && temp)
 		{
+			print[0] = ft_strdup(temp);
 			free (temp);
 			temp = 0;
 			return (print[0]);
