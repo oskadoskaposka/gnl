@@ -1,8 +1,8 @@
-/* char return_temp (char *t, int size, char *buf)
-{	
-	char *p;
+/* void	change_t(char *t, int size, char *buf) //t, size, buf
+{
 
-	if (!*t && size > 0)
+	char	*p; 
+	if (!t && size > 0)
 		t = ft_strdup(buf);
 	else if (t && size > 0)
 	{
@@ -11,5 +11,4 @@
 		t = ft_strjoin(p, buf);
 		free (p);
 	}
-	return (t);
 } */

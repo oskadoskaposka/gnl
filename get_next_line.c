@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/26 03:42:15 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/26 04:18:03 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,34 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dest);
 }
 
+void	change_t(char **t, int size, char *buf) //t, size, buf
+{
+	char	*p; 
 
-char *return_temp (char *t, int size, char *buf)
-{	
-	char *p;
-
-	if (!t && size > 0)
-		t = ft_strdup(buf);
-	else if (t && size > 0)
+	if (!*t && size > 0)
+		*t = ft_strdup(buf);
+	else if (*t && size > 0)
 	{
-		p = ft_strdup(t);
-		free (t);
-		t = ft_strjoin(p, buf);
+		p = ft_strdup(*t);
+		free (*t);
+		*t = ft_strjoin(p, buf);
 		free (p);
 	}
-	return (t);
 }
 
+char *has_break(char **t)
+{
+	char *p[3];
 
+	p[2] = ft_strchr(*t, '\n');
+	p[0] = ft_substr(*t, 0, (p[2] - *t + 1));
+	p[1] = ft_substr(*t, (p[2] - *t + 1), (ft_strlen(*t) + 1));
+	free (*t);
+	*t = ft_strdup(p[1]);
+	free(p[1]);
+	p[1] = 0;
+	return (p[0]);
+}
 
 char	*get_next_line(int fd)
 {
@@ -69,35 +79,11 @@ char	*get_next_line(int fd)
 	while (size > 0)
 	{
 		if (ft_strlen(t))
-		{
-			p[2] = ft_strchr(t, '\n');
-			if (p[2])
-			{
-				p[0] = ft_substr(t, 0, (p[2] - t + 1));
-				p[1] = ft_substr(t, (p[2] - t + 1), (ft_strlen(t) + 1));
-				free (t);
-				t = ft_strdup(p[1]);
-				free(p[1]);
-				p[1] = 0;
-				return (p[0]);
-			}
-		}
+			if (ft_strchr(t, '\n'))
+				return(has_break(&t));
 		size = read (fd, buf, BUFFER_SIZE);
 		buf[size] = 0;
-
-		return_temp(t, size, buf);
-
-/* 		if (!t && size > 0)
-			t = ft_strdup(buf);
-		else if (t && size > 0)
-		{
-			p[1] = ft_strdup(t);
-			free (t);
-			t = ft_strjoin(p[1], buf);
-			free (p[1]);
-		} */
-
-		
+		change_t(&t, size, buf);
 		if (size == 0 && ft_strlen(t))
 		{
 			p[0] = ft_strdup(t);
