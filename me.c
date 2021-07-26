@@ -14,7 +14,7 @@ int main (void)
     while (i)
     {
     texticulo = get_next_line(fd);
-    printf("&%s|",texticulo);
+    printf("&%s| ",texticulo);
     if (!texticulo)
         i = 0;
     free(texticulo);

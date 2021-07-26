@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/26 01:54:47 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/26 02:19:58 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ char	*get_next_line(int fd)
 			free (print[1]);
 		}
 		//if (size == 0 && ft_strlen(print[0]) > 0)
-		if (size == 0 && temp)
+		if (size == 0 && ft_strlen(temp))
 		{
 			print[0] = ft_strdup(temp);
 			free (temp);
