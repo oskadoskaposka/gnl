@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/26 01:30:28 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:31:03 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,8 +170,8 @@ char	*get_next_line(int fd)
 	}
 	free(temp);
 	temp = 0;
-	free(print[1]);
-	//free(print[0]);
+	//free(print[1]);
+	free(print[0]);
 	return (NULL);
 	
 }	
