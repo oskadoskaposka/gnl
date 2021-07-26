@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/26 01:08:33 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:18:37 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 char	*get_next_line(int fd)
 {
-	char		*print[3]; // 0 é retorno, 1 sendo store temporario e 2 sendo pointer para '\n' encontrado.
+	char		*print[3]; 
 	static char	*temp;
-	static int	pass;
 	char		buf[BUFFER_SIZE + 1];
 	int			size;
 
@@ -133,57 +132,43 @@ char	*get_next_line(int fd)
 		if (ft_strlen(temp))
 		{
 			print[2] = ft_strchr(temp, '\n');
-			if (print[2]) //procura '\n' na temp
-			{//achou
-				print[0] = ft_substr(temp, 0, (print[2] - temp + 1)); //print[0] = começo da temp ate o '\n'
-				print[1] = ft_substr(temp, (print[2] - temp + 1), (ft_strlen(temp) + 1)); //print[1] = substr (depois do '/n' até o final da temp)
-				free (temp); //limpa temp
-				temp = ft_strdup(print[1]); //temp = substr (depois do '/n' até o final da temp)
+			if (print[2]) 
+			{
+				print[0] = ft_substr(temp, 0, (print[2] - temp + 1)); 
+				print[1] = ft_substr(temp, (print[2] - temp + 1), (ft_strlen(temp) + 1)); 
+				free (temp); 
+				temp = ft_strdup(print[1]); 
 				free(print[1]);
 				print[1] = 0;
-				pass = pass + 1; //pass += pass
-				//printf("achou /n");
-				
-				return (print[0]); //return (print)
+				return (print[0]); 
 			}
 			else
-			{//n achou
-				print[0] = ft_strdup(temp); //print = strjoin(print + temp) //012
-				//printf(" n encontrou");
-				//free(temp);
+			{
+				print[0] = ft_strdup(temp); 
 			}
 		}
 		size = read (fd, buf, BUFFER_SIZE);
 		buf[size] = 0;
 		if (!temp && size > 0)
 		{
-			temp = ft_strdup(buf); //temp = strdup(buffer)
-			//printf("fez maracutaia na temp\n");
+			temp = ft_strdup(buf); 
 		}
 		else if (temp && size > 0)
 		{
 			print[1] = ft_strdup(temp);
 			free (temp);
-			//printf("fez165\n");
 			temp = ft_strjoin(print[1], buf); //temp = strjoin(temp + buffer)
 			free (print[1]);
 		}
-/* 		if (size == 0 && ft_strlen(print[0]) > 0 && pass > 0)
-		{
-			print[0] = ft_strjoin (print[0], "\n"); //print = strjoin (print, "\n")
-			free (temp); //limpa temp
-			temp = NULL; //temp = NULL
-			//printf("%i", pass);
-			return (print[0]); //return (print)
-		} */
 		if (size == 0 && ft_strlen(print[0]) > 0)
 		{
 			free (temp);
 			temp = 0;
-			//printf("loop");
 			return (print[0]);
 		}
 	}
+	free(temp);
+	temp = 0;
 	return (NULL);
 	
 }	
