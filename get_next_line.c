@@ -6,13 +6,13 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/26 04:18:03 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/26 04:25:09 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char			*dest;
 	unsigned int	i;
@@ -39,9 +39,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dest);
 }
 
-void	change_t(char **t, int size, char *buf) //t, size, buf
+static void	change_t(char **t, int size, char *buf)
 {
-	char	*p; 
+	char	*p;
 
 	if (!*t && size > 0)
 		*t = ft_strdup(buf);
@@ -54,9 +54,9 @@ void	change_t(char **t, int size, char *buf) //t, size, buf
 	}
 }
 
-char *has_break(char **t)
+static char	*has_break(char **t)
 {
-	char *p[3];
+	char	*p[3];
 
 	p[2] = ft_strchr(*t, '\n');
 	p[0] = ft_substr(*t, 0, (p[2] - *t + 1));
@@ -80,7 +80,7 @@ char	*get_next_line(int fd)
 	{
 		if (ft_strlen(t))
 			if (ft_strchr(t, '\n'))
-				return(has_break(&t));
+				return (has_break(&t));
 		size = read (fd, buf, BUFFER_SIZE);
 		buf[size] = 0;
 		change_t(&t, size, buf);
