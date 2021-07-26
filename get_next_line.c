@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:55 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/26 01:25:05 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:29:37 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,7 @@ char	*get_next_line(int fd)
 		{
 			print[1] = ft_strdup(temp);
 			free (temp);
-			temp = ft_strjoin(print[1], buf); //temp = strjoin(temp + buffer)
+			temp = ft_strjoin(print[1], buf);
 			free (print[1]);
 		}
 		if (size == 0 && ft_strlen(print[0]) > 0)
@@ -170,6 +170,8 @@ char	*get_next_line(int fd)
 	}
 	free(temp);
 	temp = 0;
+	free(print[1]);
+	free(print[0]);
 	return (NULL);
 	
 }	
