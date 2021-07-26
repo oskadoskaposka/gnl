@@ -6,7 +6,7 @@
 /*   By: apaduan- <apaduan-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 20:51:51 by apaduan-          #+#    #+#             */
-/*   Updated: 2021/07/25 03:13:23 by apaduan-         ###   ########.fr       */
+/*   Updated: 2021/07/25 22:05:01 by apaduan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #endif
 
 # include <unistd.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h> //retirar, serve para a função open apenas
 
