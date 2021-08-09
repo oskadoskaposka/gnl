@@ -1,5 +1,5 @@
 # Get Next Line
-Why use other people functions when you can create your own?
+Reading a line on a fd is way too tedious!
 
 ### Project Status
 
@@ -40,7 +40,7 @@ Files in this project.
 
 <a id='tips'></a>
 ## Tips
-Learn about time management, resource management and importance have good friends close to you.
+Learn about time management, resource management and value to have good friends close to you.
 
 And a little bit more about pointers, pointer to pointers, file descriptors, READ, OPEN, buffer, how to define a variable during compilation.
 
