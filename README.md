@@ -12,7 +12,6 @@ Reading a line on a fd is way too tedious!
 - [Files](#files)
 - [Tips](#tips)
 
---------------------
 
 <a id='intro'></a>
 ## Intro
@@ -20,9 +19,8 @@ The aim of this project is to code a function that returns a line, read from a f
 
 [Back to top](#indice)
 
---------------------
 
-<a id='intro'></a>
+<a id='files'></a>
 ## Files
 Files in this project.
 
@@ -39,7 +37,6 @@ Files in this project.
 
 [Back to top](#indice)
 
---------------------
 
 <a id='tips'></a>
 ## Tips
