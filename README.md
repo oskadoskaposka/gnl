@@ -28,14 +28,17 @@ Files in this project.
 
 | Name | in Repo? | allowed? |
 | --- | --- | --- |
-| [get_next_line.c](https://github.com/oskadoskaposka/gnl/blob/4c33ff76e8c8990ee8264e4a7fa9d707b5617da2/get_next_line.c) | ✔️ | ✔️ |
-| [get_next_line.h](https://github.com/oskadoskaposka/gnl/blob/9832d5a218e627d5763e6f11067d98ede7eae763/get_next_line.h) | ✔️ | ✔️ |
-| [get_next_line_utils.c](https://github.com/oskadoskaposka/gnl/blob/411c8c6605fce6632fcedea1a14ca9c2e88b188c/get_next_line_utils.c) |  ✔️ | ✔️ |
-| [README.md](https://github.com/oskadoskaposka/gnl/blob/26da265b7d7217ca743acab2369794d075e7b1a2/README.md) | ✔️ | ❌ |
+| [get_next_line.c](https://github.com/oskadoskaposka/gnl/blob/main/get_next_line.c) | ✔️ | ✔️ |
+| [get_next_line.h](https://github.com/oskadoskaposka/gnl/blob/main/get_next_line.h) | ✔️ | ✔️ |
+| [get_next_line_utils.c](https://github.com/oskadoskaposka/gnl/blob/main/get_next_line_utils.c) |  ✔️ | ✔️ |
+| [README.md](https://github.com/oskadoskaposka/gnl/blob/main/README.md) | ✔️ | ❌ |
 
 <!-- ✔️ -->
 <!-- ❌ -->
 <!-- [Mensagem a ser exibida](arquivo/caminho link) -->
+
+[Back to top](#indice)
+
 --------------------
 
 <a id='tips'></a>
