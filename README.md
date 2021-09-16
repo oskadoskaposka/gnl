@@ -30,6 +30,8 @@ Files in this project.
 | [get_next_line.h](https://github.com/oskadoskaposka/gnl/blob/main/get_next_line.h) | ✔️ | ✔️ |
 | [get_next_line_utils.c](https://github.com/oskadoskaposka/gnl/blob/main/get_next_line_utils.c) |  ✔️ | ✔️ |
 | [README.md](https://github.com/oskadoskaposka/gnl/blob/main/README.md) | ✔️ | ❌ |
+| [me.c]() | ✔️ | ❌ |
+| [me.txt]()  | ✔️ | ❌ |
 
 <!-- ✔️ -->
 <!-- ❌ -->
